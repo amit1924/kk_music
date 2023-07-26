@@ -161,16 +161,16 @@ main {
   }
 } */
 
-.raindrop {
+/* .raindrop {
   position: absolute;
   width: 2px;
   height: 10px;
   background-color: #00f;
   opacity: 0.9;
   animation: falling-animation 2s linear infinite, move-animation 2s linear infinite;
-}
+} */
 
-@keyframes falling-animation {
+/* @keyframes falling-animation {
   0% {
     transform: translateY(-10px);
   }
@@ -187,7 +187,7 @@ main {
   50% {
     transform: translateX(100px);
   }
-}
+} */
 
 
 
@@ -451,4 +451,209 @@ button:hover {
   opacity: 0.5;
   color: rgb(146, 255, 4);
   background:white;
+}
+
+
+/* Add styles for the song buttons container */
+.song-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 54%;
+  transform: translateX(-50%);
+  width: 90%; /* Adjust the width for small devices */
+
+  /* Add media query for small devices (e.g., smartphones) */
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack the buttons vertically on small devices */
+    align-items: center; /* Center the buttons horizontally */
+    position: relative; /* Remove the fixed position */
+    transform: translateX(0); /* Reset the transform */
+
+    /* Adjust the distance from the bottom as needed */
+    bottom: 20px;
+  }
+}
+
+/* Add styles for the song buttons */
+.song-buttons-container button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #ffcc00;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  opacity: 0.7;
+}
+
+/* Add hover animation for the song buttons */
+.song-buttons-container button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ff3f5a;
+}
+
+/* Add animation for the active (currently playing) button */
+.song-buttons-container button.active {
+  background-color: #ff3f5a;
+  box-shadow: 0 4px 8px rgba(0, 255, 51, 0.5);
+  transform: scale(1.1);
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Adjust styles for larger devices here */
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  /* Add other styles as needed for larger devices */
+}
+
+
+@media (min-width: 1025px) and (max-width: 1920px) {
+  /* Adjust styles for HD TV and Android TV here */
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  /* Add other styles as needed for HD TV and Android TV */
+}
+
+/* Add styles for the main content */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px; /* Increase the top margin for better spacing */
+}
+
+/* Add styles for the song cards */
+.song {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px; /* Increase the margin for better spacing */
+  padding: 20px; /* Increase the padding for better spacing */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 250px; /* Increase the width of the song card for better visibility */
+  min-height: 250px; /* Increase the minimum height of the card to prevent jumping */
+}
+
+/* Add styles for the dark mode */
+.dark .song {
+  color: yellow;
+}
+
+/* Adjust the image size on song cards */
+.song img {
+  width: 150px; /* Increase the image width for better visibility */
+  height: 150px; /* Increase the image height for better visibility */
+  margin-bottom: 15px; /* Increase the margin for better spacing */
+}
+
+/* Increase the font size for song titles */
+.song b {
+  font-size: 1.4rem; /* Increase the font size for better readability */
+  font-weight: 600;
+}
+
+/* Add styles for the song details */
+.song-details {
+  flex: 1;
+  text-align: center;
+}
+
+/* Add styles for the song buttons container */
+.song-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* Adjust the width for small devices */
+
+  /* Add media query for small devices (e.g., smartphones) */
+  @media (max-width: 480px) {
+    flex-direction: column; /* Stack the buttons vertically on small devices */
+    align-items: center; /* Center the buttons horizontally */
+    position: relative; /* Remove the fixed position */
+    transform: translateX(0); /* Reset the transform */
+
+    /* Adjust the distance from the bottom as needed */
+    bottom: 20px;
+  }
+}
+
+/* Add styles for the song buttons */
+.song-buttons-container button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #ffcc00;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  opacity: 0.7;
+}
+
+/* Add hover animation for the song buttons */
+.song-buttons-container button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ff3f5a;
+}
+
+/* Add animation for the active (currently playing) button */
+.song-buttons-container button.active {
+  background-color: #ff3f5a;
+  box-shadow: 0 4px 8px rgba(0, 255, 51, 0.5);
+  transform: scale(1.1);
+}
+
+/* Media query for iPhone 4 (640x960 pixels) */
+@media (max-width: 640px) {
+  /* Adjust styles for iPhone 4 here */
+
+  /* Main content styles */
+  main {
+    margin-top: 5px; /* Adjust the top margin for better spacing on iPhone 4 */
+  }
+
+  .song {
+    width: 100%; /* Full width for song card on small devices */
+    max-width: 250px; /* Limit the maximum width of the song card */
+  }
+
+  /* Song buttons container styles */
+  .song-buttons-container {
+    /* Adjust the distance from the bottom as needed for iPhone 4 */
+    bottom: 10px;
+  }
+
+  .song-buttons-container button {
+    font-size: 14px;
+    padding: 8px 20px;
+    margin-bottom: 15px; /* Increase the margin for better spacing on iPhone 4 */
+  }
 }

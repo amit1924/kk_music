@@ -1,0 +1,454 @@
+/* styles.css */
+body {
+  overflow: auto;
+  position: relative;
+  background-color: #373636;
+  margin: 0;
+}
+
+#search-input{
+  position: fixed;
+  background-color: #6e2c80;
+  font-size: 15px;
+}
+
+
+.animation-container h2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: linear-gradient(to right,green,pink,cyan,blue,black);
+  animation: typewriter 4s steps(40) infinite;
+}
+
+
+@keyframes typewriter {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+.flashing-heading {
+  animation: flashing 2s linear infinite;
+  background: linear-gradient(45deg, #ff3f5a, #007bff, #ff3f5a);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header {
+  /* background-color: rgba(red, green, blue, alpha); */
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-family: 200;
+  font-size: 40px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.song {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  /* border: 1px solid #060606; */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 200px; /* Adjust the width of the song card as needed */
+  min-height: 200px; /* Set a minimum height for the card to prevent jumping */
+}
+
+.dark .song {
+  /* background-color: black; */
+  color: yellow;
+}
+
+.song img {
+  width: 100px; /* Adjust the image size as needed */
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.song b {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.song-details {
+  flex: 1;
+  text-align: center;
+}
+
+/* Add styles for the song button container */
+.song-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  position: fixed; /* Set the position to fixed */
+  bottom: 0; /* Adjust the distance from the bottom as needed */
+  left: 50%; /* Center the buttons horizontally */
+  transform: translateX(-50%);
+  
+}
+
+/* Add styles for the song buttons */
+.song-buttons-container button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #ffcc00;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  opacity: 0.7;
+}
+
+/* Add hover animation for the song buttons */
+.song-buttons-container button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ff3f5a;
+}
+
+/* Add animation for the active (currently playing) button */
+.song-buttons-container button.active {
+  background-color: #ff3f5a;
+  box-shadow: 0 4px 8px rgba(0, 255, 51, 0.5);
+  transform: scale(1.1);
+}
+
+
+
+/* .music-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ff3f5a;
+  animation: music-bar-animation 1s linear infinite;
+} */
+
+/* @keyframes music-bar-animation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+} */
+
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background-color: #00f;
+  opacity: 0.9;
+  animation: falling-animation 2s linear infinite, move-animation 2s linear infinite;
+}
+
+@keyframes falling-animation {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes move-animation {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+}
+
+
+
+/* ... (Existing styles) */
+
+li {
+  /* Existing styles */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  /* Existing styles */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.song-details {
+  /* Existing styles */
+  flex: 1;
+}
+
+b {
+  /* Existing styles */
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+span {
+  /* Existing styles */
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.song-buttons {
+  /* New styles for the button container */
+  display: flex;
+  
+  align-items: left;
+  margin-left: 10px;
+  position: fixed;
+  bottom: 0; /* Adjust the top position as needed */
+  right: 0; /* Adjust the left position as needed */
+  transform: translateY(-50%);
+}
+button {
+  /* Existing styles */
+  padding: 8px 15px;
+  border: none;
+  background-color: #65e405;
+  color: #0e0e0e;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+.dark button {
+  background: linear-gradient(to right, blue, red, green), linear-gradient(to left, orange, cyan);
+  ;
+  color: #fff; /* Set text color to white for better visibility */
+  /* Add other button styles as needed */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+button:last-child {
+  /* Remove the margin from the last button */
+  margin-right: 0;
+}
+
+button:hover {
+  /* Existing styles */
+  background-color: #0056b3;
+}
+
+
+ .singer-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('le.webp'); 
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8; /* Adjust the opacity as desired */
+  z-index: -5; /* Send the image to the background */
+}
+
+.singer-image {
+  animation: LED 2s infinite; /* Apply the animation to the singer's image */
+}
+@keyframes LED {
+  0% {
+    opacity: 1; /* Start with the base opacity */
+  }
+  50% {
+    opacity: 0.8; /* Flash to full opacity */
+  }
+  70%{
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.5; /* Return to base opacity */
+  }
+}
+
+
+.dark .singer-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('spek.webp'); 
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8; /* Adjust the opacity as desired */
+  z-index: -1; /* Send the image to the background */
+}
+.dark .singer-image {
+  animation: flash 4s infinite; /* Apply the animation to the singer's image */
+}
+
+/* Flashing effect on the singer's image */
+@keyframes flash {
+  0% {
+    opacity: 0.8; /* Start with the base opacity */
+  }
+  50% {
+    opacity: 0.5; /* Flash to full opacity */
+  }
+  100% {
+    opacity: 0.1; /* Return to base opacity */
+  }
+}
+
+
+/* Add styles for the dark mode and light mode icons */
+#btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+#btn i {
+  font-size: 24px;
+  color: #ff3f5a; /* Default icon color */
+  transition: color 0.2s;
+}
+
+#btn i.fa-sun {
+  display: none;
+}
+
+/* Add styles for dark mode */
+.dark #btn i.fa-moon {
+  display: none;
+}
+
+.dark #btn i.fa-sun {
+  display: inline;
+}
+
+/* Optional: Add hover styles to change icon color on hover */
+#btn:hover i {
+  color: #000000; /* Change icon color on hover */
+}
+
+
+
+/* Add styles for the audio controls container */
+#audio-controls-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0; /* Adjust the distance from the bottom as needed */
+  right: 20px; /* Adjust the distance from the right as needed */
+  display: inline-block;
+  /* margin-right: 10px; */
+  z-index: 0; /* Ensure it appears above other elements */
+
+}
+
+/* Add styles for the audio player */
+#audio-player {
+  width: 250px; /* Adjust the width as desired */
+
+  color: #f90000; /* Set the text color to white */
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline on focus */
+  opacity: 0.3;
+  display: none;
+}
+
+
+
+/* Media query for small devices (e.g., smartphones) */
+@media (max-width: 768px) {
+  /* Adjust styles for small devices here */
+
+  /* Main content styles */
+  main {
+    margin-top: 10px;
+  }
+
+  .song {
+    width: 100%; /* Full width for song card on small devices */
+    max-width: 300px; /* Limit the maximum width of the song card */
+  }
+
+  /* Song buttons container styles */
+  .song-buttons-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+   
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+  }
+
+  .song-buttons-container button {
+    font-size: 14px;
+    padding: 8px 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Animation container styles */
+
+  /* Dark mode and light mode icon styles */
+  #btn {
+    top: 5px;
+    right: 5px;
+  }
+} 
+
+.dark #btn{
+  padding: 0;
+  opacity: 0.5;
+  color: rgb(146, 255, 4);
+  background:white;
+}

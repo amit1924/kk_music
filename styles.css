@@ -359,10 +359,17 @@ button:hover {
   font-size: 24px;
   color: #ff3f5a; /* Default icon color */
   transition: color 0.2s;
+
 }
 
 #btn i.fa-sun {
   display: none;
+ 
+}
+
+#btn i.fa-moon{
+  margin-top: -2px;
+  margin-right: -39px;
 }
 
 /* Add styles for dark mode */
@@ -640,6 +647,23 @@ main {
 @media (max-width: 640px) {
   body{
     overflow-x: hidden;
+
+  }
+  
+  .song-buttons-container button {
+    padding: 10px 9px;
+    margin-bottom: 1px;
+    margin-left: -55px;
+   
+}
+
+
+    #search-input{
+      position: relative;
+      background-color: #6e2c80;
+      font-size: 15px;
+    }
+    
   }
  
   main {
@@ -658,10 +682,8 @@ main {
   }
 
   .song-buttons-container button {
-    font-size: 14px;
-    padding: 8px 20px;
-    margin-bottom: 5px; /* Increase the margin for better spacing on iPhone 4 */
-  }
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    /* margin-left: -47px; */
+   
 }
-
-

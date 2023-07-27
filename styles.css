@@ -389,28 +389,7 @@ button:hover {
 
 
 /* Add styles for the audio controls container */
-#audio-controls-container {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  bottom: 0; /* Adjust the distance from the bottom as needed */
-  right: 20px; /* Adjust the distance from the right as needed */
-  display: inline-block;
-  /* margin-right: 10px; */
-  z-index: 0; /* Ensure it appears above other elements */
 
-}
-
-/* Add styles for the audio player */
-#audio-player {
-  width: 250px; /* Adjust the width as desired */
-
-  color: #f90000; /* Set the text color to white */
-  border: none; /* Remove the border */
-  outline: none; /* Remove the outline on focus */
-  opacity: 0.3;
-  display: none;
-}
 
 
 
@@ -649,6 +628,11 @@ main {
     overflow-x: hidden;
 
   }
+
+  
+
+  
+  
   
   .song-buttons-container button {
     padding: 10px 9px;
@@ -664,8 +648,20 @@ main {
       font-size: 15px;
     }
     
+
+
+
+
+  /* Adjust other styles for better visibility on small devices if needed */
+
+
+    
+    
   }
  
+
+
+
   main {
     margin-top: 5px; /* Adjust the top margin for better spacing on iPhone 4 */
   }

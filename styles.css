@@ -1,6 +1,7 @@
 /* styles.css */
 body {
   overflow: auto;
+  overflow-x: hidden;
   position: relative;
   background-color: #373636;
   margin: 0;
@@ -460,7 +461,7 @@ button:hover {
   justify-content: space-around;
   position: fixed;
   bottom: 0;
-  left: 54%;
+  left: 53%;
   transform: translateX(-50%);
   width: 90%; /* Adjust the width for small devices */
 
@@ -468,7 +469,7 @@ button:hover {
   @media (max-width: 768px) {
     flex-direction: column; /* Stack the buttons vertically on small devices */
     align-items: center; /* Center the buttons horizontally */
-    position: relative; /* Remove the fixed position */
+    position: fixed; /* Remove the fixed position */
     transform: translateX(0); /* Reset the transform */
 
     /* Adjust the distance from the bottom as needed */
@@ -587,16 +588,20 @@ main {
   justify-content: space-around;
   position: fixed;
   bottom: 0;
-  left: 50%;
+  left: 51%;
   transform: translateX(-50%);
   width: 90%; /* Adjust the width for small devices */
 
   /* Add media query for small devices (e.g., smartphones) */
   @media (max-width: 480px) {
-    flex-direction: column; /* Stack the buttons vertically on small devices */
+    flex-direction: row; /* Stack the buttons vertically on small devices */
     align-items: center; /* Center the buttons horizontally */
-    position: relative; /* Remove the fixed position */
-    transform: translateX(0); /* Reset the transform */
+    position: fixed; /* Remove the fixed position */
+    transform: translateX(0);
+   left: 50px;
+   overflow-x: hidden;
+  
+  
 
     /* Adjust the distance from the bottom as needed */
     bottom: 20px;
@@ -633,9 +638,10 @@ main {
 
 /* Media query for iPhone 4 (640x960 pixels) */
 @media (max-width: 640px) {
-  /* Adjust styles for iPhone 4 here */
-
-  /* Main content styles */
+  body{
+    overflow-x: hidden;
+  }
+ 
   main {
     margin-top: 5px; /* Adjust the top margin for better spacing on iPhone 4 */
   }
@@ -648,12 +654,14 @@ main {
   /* Song buttons container styles */
   .song-buttons-container {
     /* Adjust the distance from the bottom as needed for iPhone 4 */
-    bottom: 10px;
+    bottom: -14px;
   }
 
   .song-buttons-container button {
     font-size: 14px;
     padding: 8px 20px;
-    margin-bottom: 15px; /* Increase the margin for better spacing on iPhone 4 */
+    margin-bottom: 5px; /* Increase the margin for better spacing on iPhone 4 */
   }
 }
+
+

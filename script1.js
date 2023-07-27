@@ -43,3 +43,5 @@ function typewriterEffect() {
   let btn = document.querySelector('.dark-mode');
   btn.addEventListener('click', toggle);
   
+
+  

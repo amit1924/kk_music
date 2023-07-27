@@ -49,6 +49,13 @@
     "image": "KKK.jpg"
   },
   {
+    "title": "Bardaasht",
+    "artist": "KK",
+    "url": "KK/Bardaasht.mp3",
+    "image": "KKK.jpg"
+  },
+ 
+  {
     "title": "Barhan Dil",
     "artist": "KK",
     "url": "KK/Barhaan Dil (Male Version) - Mr. Singh Mrs. Mehta 128 Kbps.mp3",
@@ -71,6 +78,18 @@
     "title": "Beetein Lamhein (Unplugged)",
     "artist": "KK",
     "url": "KK/Beetein Lamhein (Unplugged) KK.mp3",
+    "image": "KKK.jpg"
+  },
+  {
+    "title": "Bin Tum",
+    "artist": "KK",
+    "url": "KK/Bin Tum.mp3",
+    "image": "KKK.jpg"
+  },
+  {
+    "title": "Chand Ki Roshni",
+    "artist": "KK",
+    "url": "KK/Chand Ki Roshni Home Delivery 128 Kbps.mp3",
     "image": "KKK.jpg"
   },
   {
@@ -104,6 +123,12 @@
     "image": "KKK.jpg"
   },
   {
+    "title": "Duniya Ne Dil Toda",
+    "artist": "KK",
+    "url": "KK/Duniya Ne Dil Toda - Showbiz 128 Kbps.mp3",
+    "image": "KKK.jpg"
+  },
+  {
     "title": "Dus Bahane",
     "artist": "KK",
     "url": "KK/Dus Bahane.mp3",
@@ -116,9 +141,21 @@
     "image": "KKK.jpg"
   },
   {
+    "title": "Ek Pal Ke Liye.",
+    "artist": "KK",
+    "url": "KK/Ek Pal Ke Liye.mp3",
+    "image": "KKK.jpg"
+  },
+  {
     "title": "Gulon Me Rang Bhare",
     "artist": "KK",
     "url": "KK/Gulon Mein (Upbeat Version) - Sikandar 128 Kbps.mp3",
+    "image": "KKK.jpg"
+  },
+  {
+    "title": "Haan Main Jitni Martaba",
+    "artist": "KK",
+    "url": "KK/Haan Main Jitni Martaba - All The Best 128 Kbps.mp3",
     "image": "KKK.jpg"
   },
   {
@@ -298,9 +335,27 @@
     "image": "KKK.jpg"
   },
   {
+    "title": "Mere Palak Ka Tu Hi Sitara",
+    "artist": "KK",
+    "url": "KK/Mere Palak Ka Tu Hi Sitara - Showbiz 128 Kbps.mp3",
+    "image": "KKK.jpg"
+  },
+  {
     "title": "Meri Maa (Reprise)",
     "artist": "KK",
     "url": "KK/Meri Maa (Reprise) - Yaariyan 128 Kbps.mp3",
+    "image": "KKK.jpg"
+  },
+  {
+    "title": "Mujhe Kuch Kehna Hai ",
+    "artist": "KK",
+    "url": "KK/Mujhe Kuch Kehna Hai - Mujhe Kucch Kehna Hai 128 Kbps.mp3",
+    "image": "KKK.jpg"
+  },
+  {
+    "title": "Nazar Nazar",
+    "artist": "KK",
+    "url": "KK/Nazar Nazar - Nazar 128 Kbps.mp3",
     "image": "KKK.jpg"
   },
   {
@@ -400,6 +455,12 @@
     "image": "KKK.jpg"
   },
   {
+    "title": "Tanha Tere Bagair",
+    "artist": "KK",
+    "url": "KK/Tanha Tere Bagair.mp3",
+    "image": "KKK.jpg"
+  },
+  {
     "title": "Tera Mera Rishta",
     "artist": "KK",
     "url": "KK/Tera Mera Rishta - Male (Jalebi) 128 Kbps.mp3",
@@ -409,6 +470,12 @@
     "title": "Tere Is Jahan Mein ",
     "artist": "KK",
     "url": "KK/Tere Is Jahan Mein - Rog 128 Kbps.mp3",
+    "image": "KKK.jpg"
+  },
+  {
+    "title": "Teri Tamanna",
+    "artist": "KK",
+    "url": "KK/Teri Tamanna - The Train 128 Kbps.mp3",
     "image": "KKK.jpg"
   },
   {
@@ -439,6 +506,12 @@
     "title": "Tu Mujhe Soch Kabhi  ",
     "artist": "KK",
     "url": "KK/Tu Mujhe Soch Kabhi - Zindagi Tere Naam 128 Kbps.mp3",
+    "image": "KKK.jpg"
+  },
+  {
+    "title": "Tu Mujhse Jab Se Mila Hai",
+    "artist": "KK",
+    "url": "KK/Tu Mujhse Jab Se Mila Hai - Showbiz 128 Kbps.mp3",
     "image": "KKK.jpg"
   },
   {
@@ -478,6 +551,12 @@
     "image": "KKK.jpg"
   },
   {
+    "title": "Ye Fizaein",
+    "artist": "KK",
+    "url": "KK/Ye Fizaein - Main Hoon Na 128 Kbps.mp3",
+    "image": "KKK.jpg"
+  },
+  {
     "title": "Yeh Kahan Mil Gaye Hum",
     "artist": "KK",
     "url": "KK/Yeh Kahan Mil Gaye.mp3",
@@ -513,5 +592,4 @@
     "url": "KK/Zindagi Hosh Mein.mp3",
     "image": "KKK.jpg"
   }
-
 ]

@@ -62,11 +62,62 @@ searchInput.addEventListener("keyup", (event) => {
   }
 });
 
-// Rest of the code...
 
-// Rest of the code...
 
-// Rest of the code remains the same
+// For Equalizer
+
+function applyEqualizerSettings() {
+  const equalizerSelect = document.getElementById("equalizer-select");
+  const selectedPreset = equalizerSelect.value;
+
+  // Create the Web Audio API equalizer nodes
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  const audioPlayer = document.getElementById("audio-player");
+  const source = audioContext.createMediaElementSource(audioPlayer);
+  const gainNode = audioContext.createGain();
+  const equalizer = audioContext.createBiquadFilter();
+
+  // Connect the nodes
+  source.connect(equalizer); // Connect source to equalizer
+  equalizer.connect(gainNode); // Connect equalizer to gain node
+  gainNode.connect(audioContext.destination); // Connect gain node to audio destination
+
+  // Set the equalizer preset based on the selected option
+  if (selectedPreset === "normal") {
+    // Reset equalizer settings to default (no changes)
+    equalizer.type = "allpass";
+    equalizer.frequency.setValueAtTime(350, audioContext.currentTime);
+    equalizer.gain.setValueAtTime(0, audioContext.currentTime);
+  } else if (selectedPreset === "rock") {
+    // Apply Rock equalizer settings
+    equalizer.type = "peaking";
+    equalizer.frequency.setValueAtTime(100, audioContext.currentTime);
+    equalizer.gain.setValueAtTime(5, audioContext.currentTime);
+    equalizer.Q.setValueAtTime(1, audioContext.currentTime);
+  } else if (selectedPreset === "bass") {
+    // Apply Bass equalizer settings
+    equalizer.type = "lowshelf";
+    equalizer.frequency.setValueAtTime(100, audioContext.currentTime);
+    equalizer.gain.setValueAtTime(10, audioContext.currentTime);
+  }
+
+  // Set the audioPlayer's src to the audioContext's destination
+  audioPlayer.srcObject = audioContext;
+}
+
+const equalizerSelect = document.getElementById("equalizer-select");
+equalizerSelect.addEventListener("change", applyEqualizerSettings);
+
+// Rest of your code remains unchanged.
+
+
+// Rest of your code remains unchanged.
+
+
+
+
+
+ 
 
 function playSong(songIndex) {
   const selectedSong = songs[songIndex];
@@ -74,6 +125,9 @@ function playSong(songIndex) {
   audioPlayer.currentTime = 0; // Reset the audio player's current time to 0
   audioPlayer.play();
   currentSongIndex = songIndex;
+
+  // Apply the selected equalizer settings
+  applyEqualizerSettings();
 
   // Scroll to the currently playing song
   const songElements = document.querySelectorAll(".song");
@@ -104,66 +158,3 @@ previousButton.addEventListener("click", previousSong);
 // Add event listener to the stop button
 const stopButton = document.getElementById("stop-button");
 stopButton.addEventListener("click", pauseSong);
-
-// The rest of your code for the raindrop animation and music bar flashing should
-
-function generateRaindrops() {
-  const numberOfRaindrops = 50;
-  const body = document.querySelector("body");
-
-  for (let i = 0; i < numberOfRaindrops; i++) {
-    const raindrop = document.createElement("div");
-    raindrop.classList.add("raindrop");
-    raindrop.style.left = `${Math.random() * 100}%`;
-    raindrop.style.animationDuration = `${Math.random() * 2 + 1}s`;
-    body.appendChild(raindrop);
-  }
-}
-
-// Call the functions to generate the raindrops and the song list when the page loads
-window.addEventListener("load", () => {
-  generateRaindrops();
-});
-
-// script.js
-// ... (Existing code)
-
-// Function to handle music bar flashing on the beat
-function flashMusicBar() {
-  const musicBar = document.querySelector(".music-bar");
-  musicBar.style.animation = "none"; // Remove the existing animation
-  musicBar.offsetHeight; // Trigger reflow to restart the animation
-  musicBar.style.animation = null; // Reset the animation to its original value
-}
-
-// Add a Web Audio API listener to detect beats and call the flashMusicBar() function
-function detectBeats() {
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  const audioPlayer = document.getElementById("audio-player");
-  const analyser = audioContext.createAnalyser();
-
-  const source = audioContext.createMediaElementSource(audioPlayer);
-  source.connect(analyser);
-  analyser.connect(audioContext.destination);
-
-  const bufferLength = analyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-
-  function update() {
-    analyser.getByteFrequencyData(dataArray);
-    let sum = 0;
-    dataArray.forEach((value) => (sum += value));
-    const average = sum / bufferLength;
-
-    // You can adjust the threshold value to make the music bar flash more or less frequently
-    if (average > 150) {
-      flashMusicBar();
-    }
-
-    requestAnimationFrame(update);
-  }
-
-  update();
-}
-
-// Call the functions to generate the raindrops, the song list, and detect beats when the page loads

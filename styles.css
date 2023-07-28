@@ -273,9 +273,6 @@ button :visited{
   transition: background-color 0.2s ease-in-out;
 }
 
-.dark button:hover{
-  background-color: #73ff00;
-}
 
 button:last-child {
   /* Remove the margin from the last button */
@@ -381,7 +378,25 @@ button:hover {
 
 /* Add styles for the audio controls container */
 
+#audio-player {
+  position: fixed;
+  left: -240px;
+  top: 106px;
+  padding-right: 220px;
 
+  z-index: 0.2;
+  opacity: 0.6;
+
+  transform: rotate(-90deg); /* Rotate the container 90 degrees counterclockwise */
+  /* transform-origin: top right;  */
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #00fce3; /* Replace with your desired background color */
+  color:#fe6100;
+
+
+}
 
 
 /* Media query for small devices (e.g., smartphones) */
@@ -624,10 +639,34 @@ main {
 
   }
 
+
+  #audio-player {
+    position: fixed;
+    left: -240px;
+    top: 106px;
+    padding-right: 203px;
   
+    z-index: 0.2;
+    opacity: 0.6;
+
+    transform: rotate(-90deg); /* Rotate the container 90 degrees counterclockwise */
+    /* transform-origin: top right;  */
+  }
+
+  audio::-webkit-media-controls-panel {
+    background-color: #009688; /* Replace with your desired background color */
+    color:#fe6100;
+
+ 
+  }
+
 
   
   
+
+
+
+}
   
   .song-buttons-container button {
     padding: 10px 9px;
@@ -678,3 +717,40 @@ main {
     /* margin-left: -47px; */
    
 }
+
+#equalizer-select {
+  padding: -1px;
+  font-size: 12px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  background-color: #ff700a;
+  color: #333;
+  margin-left: -41px;
+}
+
+#equalizer-select:hover{
+  background-color:rgb(255, 0, 208) ;
+}
+
+/* Style the select options */
+#equalizer-select option {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+/* Style the select dropdown arrow */
+#equalizer-select::-ms-expand {
+  display: none; /* Remove the default arrow for IE */
+}
+
+/* Style the custom dropdown arrow */
+#equalizer-select::after {
+  content: '\f0d7'; /* FontAwesome chevron-down icon */
+  font-family: 'Font Awesome 5 Free'; /* Use your FontAwesome font */
+  position: absolute;
+  left: 85px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+

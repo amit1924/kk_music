@@ -44,4 +44,9 @@ function typewriterEffect() {
   btn.addEventListener('click', toggle);
   
 
+  const scrollUpBtn = document.getElementById("scroll-up-btn");
+  scrollUpBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
   
+

@@ -9,8 +9,8 @@ body {
 
 #search-input{
   position: fixed;
-  background-color: #ffff00;
-  font-size: 15px;
+  background-color: #ffffff;
+  font-size: 20px;
   font-weight: 100;
 }
 
@@ -379,6 +379,7 @@ button:hover {
 /* Add styles for the audio controls container */
 
 #audio-player {
+  display: none;
   position: fixed;
   left: -240px;
   top: 106px;
@@ -641,12 +642,13 @@ main {
 
 
   #audio-player {
+    display: none;
     position: fixed;
     left: -240px;
     top: 106px;
     padding-right: 203px;
   
-    z-index: 0.2;
+    z-index: -1;
     opacity: 0.6;
 
     transform: rotate(-90deg); /* Rotate the container 90 degrees counterclockwise */
@@ -663,10 +665,28 @@ main {
 
   
   
+/* Scroll Arrow Styles */
 
-
-
+.scroll-arrow {
+  position: fixed;
+  bottom: 9px;
+  left: -1px;
+  width: 40px;
+  height: 40px;
+  background-color: #009688; /* Replace with your desired background color */
+  color: #ffffff; /* Replace with your desired arrow color */
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
 }
+
+
+
   
   .song-buttons-container button {
     padding: 10px 9px;
@@ -678,8 +698,9 @@ main {
 
     #search-input{
       position: relative;
-      background-color: #b0ff04;
+      background-color: #f2f2f2;
       font-size: 15px;
+      color: #f1f1f1;
     }
     
 
@@ -753,4 +774,30 @@ main {
   transform: translateY(-50%);
   pointer-events: none;
 }
+
+
+
+/* ... Your existing CSS ... */
+
+/* Scroll Arrow Styles */
+.scroll-arrow {
+  position: fixed;
+  bottom: 9px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #009688; /* Replace with your desired background color */
+  color: #ffffff; /* Replace with your desired arrow color */
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* ... Your existing CSS ... */
+
 

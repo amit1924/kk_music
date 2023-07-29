@@ -639,8 +639,11 @@ main {
     overflow-x: hidden;
 
   }
+  #equalizer-select {
+    padding: 8px 0px;
+  }
 
-
+ 
   #audio-player {
     display: none;
     position: fixed;
@@ -667,23 +670,6 @@ main {
   
 /* Scroll Arrow Styles */
 
-.scroll-arrow {
-  position: fixed;
-  bottom: 9px;
-  left: -1px;
-  width: 40px;
-  height: 40px;
-  background-color: #009688; /* Replace with your desired background color */
-  color: #ffffff; /* Replace with your desired arrow color */
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 9999;
-}
 
 
 
@@ -700,7 +686,7 @@ main {
       position: relative;
       background-color: #f2f2f2;
       font-size: 15px;
-      color: #f1f1f1;
+      color: #000000;
     }
     
 
@@ -739,65 +725,61 @@ main {
    
 }
 
-#equalizer-select {
-  padding: -1px;
-  font-size: 12px;
-  border: 2px solid #000000;
-  border-radius: 8px;
-  background-color: #ff700a;
+/* Style the label for the equalizer select */
+label[for="equalizer-select"] {
+  font-size: 16px;
+  font-weight: bold;
   color: #333;
-  margin-left: -41px;
 }
 
-#equalizer-select:hover{
-  background-color:rgb(255, 0, 208) ;
+/* Style the select container */
+#equalizer-select-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Style the select element */
+#equalizer-select {
+  padding: 8px 0px;
+  font-size: 11px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: #555;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 /* Style the select options */
 #equalizer-select option {
-  background-color: #f1f1f1;
-  color: #333;
+  background-color: #f8f8f8;
+  color: #555;
 }
 
-/* Style the select dropdown arrow */
-#equalizer-select::-ms-expand {
-  display: none; /* Remove the default arrow for IE */
+/* Hover effect */
+#equalizer-select:hover {
+  background-color: #e8e8e8;
 }
 
-/* Style the custom dropdown arrow */
-#equalizer-select::after {
-  content: '\f0d7'; /* FontAwesome chevron-down icon */
-  font-family: 'Font Awesome 5 Free'; /* Use your FontAwesome font */
-  position: absolute;
-  left: 85px;
+/* Focus effect */
+#equalizer-select:focus {
+  border-color: #999;
+}
+
+/* Arrow icon for the select */
+#equalizer-select-container::after {
+  content: "\f0d7"; /* FontAwesome chevron-down icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: relative;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
 }
-
-
-
-/* ... Your existing CSS ... */
-
-/* Scroll Arrow Styles */
-.scroll-arrow {
-  position: fixed;
-  bottom: 9px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: #009688; /* Replace with your desired background color */
-  color: #ffffff; /* Replace with your desired arrow color */
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-/* ... Your existing CSS ... */
-
 

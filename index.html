@@ -10,11 +10,6 @@
     />
   </head>
   <body>
-    <div id="audio-controls-container">
-      <audio id="audio-player" controls>
-        Your browser does not support the audio element.
-      </audio>
-    </div>
     <button class="dark-mode" id="btn">
       <i class="fas fa-moon"></i>
       <!-- Dark mode icon -->
@@ -41,40 +36,41 @@
         <h2>The Legend never die</h2>
       </div>
     </header>
-
     <main>
       <div class="music-bar"></div>
       <ul id="songs-list"></ul>
-
-      <label for="equalizer-select">Equalizer:</label>
     </main>
 
     <div class="song-buttons-container">
-      <select id="equalizer-select">
-        <option value="normal">Normal</option>
-        <option value="rock">Rock</option>
-        <option value="bass">Bass</option>
-        <!-- Add more options for different equalizer presets as desired -->
-      </select>
-
       <button id="previous-button">Previous</button>
       <button id="stop-button">Stop</button>
       <button id="next-button">Next</button>
     </div>
-
     <div class="dance-bar"></div>
 
-    <!-- ... Your existing HTML ... -->
+    <div id="audio-controls-container">
+      <audio id="audio-player" controls>
+        Your browser does not support the audio element.
+      </audio>
+    </div>
 
-<!-- Scroll Up Arrow -->
-<button class="scroll-arrow" id="scroll-up-btn">
-  <i class="fas fa-chevron-up"></i>
-</button>
+    <div id="equalizer-select-container">
+      <label for="equalizer-select"></label>
+      <select id="equalizer-select">
+        <option value="normal">Normal</option>
+        <option value="rock">Rock</option>
+        <option value="bass">Bass</option>
+        <option value="treble">Treble</option>
+        <option value="dolby">Dolby</option>
+        <option value="cinematic">Cinematic</option>
+      
 
-
-
-<!-- ... Your existing HTML ... -->
-
+     
+        <option value="none">None</option>
+        <option value="hall">Hall</option>
+        <option value="room">Room</option>
+      </select>
+    </div>
 
     <script src="script.js"></script>
     <script src="script1.js"></script>

@@ -62,62 +62,11 @@ searchInput.addEventListener("keyup", (event) => {
   }
 });
 
+// Rest of the code...
 
+// Rest of the code...
 
-// For Equalizer
-
-function applyEqualizerSettings() {
-  const equalizerSelect = document.getElementById("equalizer-select");
-  const selectedPreset = equalizerSelect.value;
-
-  // Create the Web Audio API equalizer nodes
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  const audioPlayer = document.getElementById("audio-player");
-  const source = audioContext.createMediaElementSource(audioPlayer);
-  const gainNode = audioContext.createGain();
-  const equalizer = audioContext.createBiquadFilter();
-
-  // Connect the nodes
-  source.connect(equalizer); // Connect source to equalizer
-  equalizer.connect(gainNode); // Connect equalizer to gain node
-  gainNode.connect(audioContext.destination); // Connect gain node to audio destination
-
-  // Set the equalizer preset based on the selected option
-  if (selectedPreset === "normal") {
-    // Reset equalizer settings to default (no changes)
-    equalizer.type = "allpass";
-    equalizer.frequency.setValueAtTime(350, audioContext.currentTime);
-    equalizer.gain.setValueAtTime(0, audioContext.currentTime);
-  } else if (selectedPreset === "rock") {
-    // Apply Rock equalizer settings
-    equalizer.type = "peaking";
-    equalizer.frequency.setValueAtTime(100, audioContext.currentTime);
-    equalizer.gain.setValueAtTime(5, audioContext.currentTime);
-    equalizer.Q.setValueAtTime(1, audioContext.currentTime);
-  } else if (selectedPreset === "bass") {
-    // Apply Bass equalizer settings
-    equalizer.type = "lowshelf";
-    equalizer.frequency.setValueAtTime(100, audioContext.currentTime);
-    equalizer.gain.setValueAtTime(10, audioContext.currentTime);
-  }
-
-  // Set the audioPlayer's src to the audioContext's destination
-  audioPlayer.srcObject = audioContext;
-}
-
-const equalizerSelect = document.getElementById("equalizer-select");
-equalizerSelect.addEventListener("change", applyEqualizerSettings);
-
-// Rest of your code remains unchanged.
-
-
-// Rest of your code remains unchanged.
-
-
-
-
-
- 
+// Rest of the code remains the same
 
 function playSong(songIndex) {
   const selectedSong = songs[songIndex];
@@ -126,14 +75,19 @@ function playSong(songIndex) {
   audioPlayer.play();
   currentSongIndex = songIndex;
 
-  // Apply the selected equalizer settings
-  applyEqualizerSettings();
+   
 
   // Scroll to the currently playing song
   const songElements = document.querySelectorAll(".song");
   const currentSongElement = songElements[currentSongIndex];
   currentSongElement.scrollIntoView({ behavior: "smooth" });
+
+
+  setTimeout(() => {
+    applyEqualizerSettings();
+  }, 500); // You can adjust the delay time as needed
 }
+
 
 function pauseSong() {
   audioPlayer.pause();
@@ -158,3 +112,4 @@ previousButton.addEventListener("click", previousSong);
 // Add event listener to the stop button
 const stopButton = document.getElementById("stop-button");
 stopButton.addEventListener("click", pauseSong);
+

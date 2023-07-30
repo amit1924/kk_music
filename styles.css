@@ -645,7 +645,7 @@ main {
 
  
   #audio-player {
-    display: none;
+    /* display: inline-block; */
     position: fixed;
     left: -240px;
     top: 106px;

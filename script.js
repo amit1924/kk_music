@@ -42,12 +42,6 @@ function generateSongList(searchQuery = "") {
   });
 }
 
-// Rest of the code...
-
-// Rest of the code...
-
-// Rest of the code...
-
 const searchInput = document.getElementById("search-input");
 searchInput.addEventListener("input", (event) => {
   const searchQuery = event.target.value;
@@ -62,32 +56,36 @@ searchInput.addEventListener("keyup", (event) => {
   }
 });
 
-// Rest of the code...
-
-// Rest of the code...
-
-// Rest of the code remains the same
-
 function playSong(songIndex) {
   const selectedSong = songs[songIndex];
   audioPlayer.src = selectedSong.url;
   audioPlayer.currentTime = 0; // Reset the audio player's current time to 0
-  audioPlayer.play();
-  currentSongIndex = songIndex;
+  audioPlayer
+    .play()
+    .then(() => {
+      // Autoplay successful, set the current song index and scroll to the song
+      currentSongIndex = songIndex;
+      const songElements = document.querySelectorAll(".song");
+      const currentSongElement = songElements[currentSongIndex];
+      currentSongElement.scrollIntoView({ behavior: "smooth" });
+    })
+    .catch((error) => {
+      // Autoplay failed, handle the error (e.g., autoplay blocked by the browser)
+      console.error("Autoplay failed:", error);
+    });
 
-   
+  // Listen for the "ended" event of the audio player to play the next song
+  audioPlayer.addEventListener("ended", () => {
+    // Calculate the index of the next song
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    playSong(currentSongIndex); // Auto play the next song
+  });
 
-  // Scroll to the currently playing song
-  const songElements = document.querySelectorAll(".song");
-  const currentSongElement = songElements[currentSongIndex];
-  currentSongElement.scrollIntoView({ behavior: "smooth" });
-
-
+  // Apply the equalizer settings for the current song
   setTimeout(() => {
     applyEqualizerSettings();
   }, 500); // You can adjust the delay time as needed
 }
-
 
 function pauseSong() {
   audioPlayer.pause();
@@ -112,4 +110,3 @@ previousButton.addEventListener("click", previousSong);
 // Add event listener to the stop button
 const stopButton = document.getElementById("stop-button");
 stopButton.addEventListener("click", pauseSong);
-
